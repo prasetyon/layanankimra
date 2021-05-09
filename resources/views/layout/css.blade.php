@@ -20,6 +20,12 @@
 <!-- summernote -->
 <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.css') }}">
 
+<!-- fullCalendar -->
+<link rel="stylesheet" href="{{ asset('admin/plugins/fullcalendar/main.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/fullcalendar-daygrid/main.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/fullcalendar-timegrid/main.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/fullcalendar-bootstrap/main.min.css') }}">
+
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('admin/css/adminlte.min.css')}}">
 

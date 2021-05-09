@@ -39,7 +39,8 @@ class PendapatHukumComponent extends Component
         $searchData = $this->searchTerm;
         return view('livewire.advokasi.pendapat-hukum-component', [
             // Lists
-            'listType' => JenisPerkara::where('type', 'LIKE', 'non litigasi')->get(),
+            'loggedUser' => Auth::user(),
+            'listType' => JenisPerkara::where('type', 'non litigasi')->get(),
             'listUnit' => ReferensiUnit::select('es2')->distinct()->get(),
             'lists' => PendapatHukum::when($searchData, function ($searchQuery) use ($searchData) {
                 $searchQuery->where([

@@ -5,28 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SidangPerkara extends Model
+class FilePerkara extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
     public function parent()
     {
-        return $this->belongsTo(PerkaraAdvokasi::class, 'perkara');
-    }
-
-    public function jenisSidang()
-    {
-        return $this->belongsTo(JenisSidang::class, 'type');
+        return $this->belongsTo(PerkaraAdvokasi::class, 'sidang');
     }
 
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');
-    }
-
-    public function file()
-    {
-        return $this->hasMany(FileSidangPerkara::class, 'sidang');
     }
 }

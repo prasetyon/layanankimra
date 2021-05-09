@@ -124,7 +124,9 @@
                         <th class="text-left">Perihal</th>
                         <th class="text-left">Keterangan</th>
                         <th class="text-left" width="10%">File</th>
+                        @if(in_array($loggedUser->role, ['admin', 'superuser']))
                         <th width="10%">Action</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -141,10 +143,12 @@
                             {{++$count.'. '}}<a href="{{$f->file}}" target="_blank">{{$f->name}}</a><br/>
                             @endforeach
                         </td>
+                        @if(in_array($loggedUser->role, ['admin', 'superuser']))
                         <td style="text-align: center;">
                             <button wire:click="edit({{ $list->id }})" class="btn btn-sm btn-info" style="width:auto; margin: 2px"><i class="fas fa-edit"></i></button>
                             <button wire:click="delete({{ $list->id }})" class="btn btn-sm btn-danger" style="width:auto; margin: 2px" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
                         </td>
+                        @endif
                     </tr>
                     @empty
                     <tr>

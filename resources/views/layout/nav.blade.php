@@ -11,8 +11,8 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
-        {{-- <li class="nav-item d-none d-sm-inline-block">
+        <li class="nav-item d-none d-sm-inline-block">
             <a class="nav-link" href="{{route('logout')}}" style="margin-bottom: 0">Logout</a>
-        </li> --}}
+        </li>
     </ul>
 </nav>

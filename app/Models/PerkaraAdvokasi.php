@@ -19,4 +19,9 @@ class PerkaraAdvokasi extends Model
     {
         return $this->hasMany(SidangPerkara::class, 'perkara');
     }
+
+    public function file()
+    {
+        return $this->hasMany(FilePerkara::class, 'perkara');
+    }
 }

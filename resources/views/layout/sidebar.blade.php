@@ -73,6 +73,7 @@
                         </p>
                     </a>
                 </li>
+                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-item">
                     <a href="{{route('kajianhukum')}}" class="nav-link @if($title=='Kajian Hukum') active @endif">
                     <i class="nav-icon fas fa-book"></i>
@@ -97,6 +98,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
 
                 <li class="nav-header">Pengaduan</li>
                 {{-- <li class="nav-item">
@@ -109,6 +111,7 @@
                 </li> --}}
 
                 <li class="nav-header">Aparat Pemeriksa</li>
+                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-item">
                     <a href="{{route('aparatpemeriksa')}}" class="nav-link @if($title=='Aparat Pemeriksa') active @endif">
                     <i class="nav-icon fas fa-user-secret"></i>
@@ -125,6 +128,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
                 {{-- <li class="nav-item">
                     <a href="{{route('jenispemeriksaantinjut')}}" class="nav-link @if($title=='Jenis Pemeriksaan Tinjut') active @endif">
                     <i class="nav-icon fas fa-database"></i>
@@ -167,23 +171,25 @@
                     </li>
                 @endif --}}
 
-                    <li class="nav-header">Referensi</li>
-                    <li class="nav-item">
-                        <a href="{{route('user')}}" class="nav-link @if($title=='User') active @endif">
-                        <i class="nav-icon fas fa-users"></i>
-                            <p>
+                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
+                <li class="nav-header">Referensi</li>
+                <li class="nav-item">
+                    <a href="{{route('user')}}" class="nav-link @if($title=='User') active @endif">
+                    <i class="nav-icon fas fa-users"></i>
+                        <p>
                             User
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('unitdja')}}" class="nav-link @if($title=='Unit DJA') active @endif">
-                        <i class="nav-icon fas fa-building"></i>
-                            <p>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('unitdja')}}" class="nav-link @if($title=='Unit DJA') active @endif">
+                    <i class="nav-icon fas fa-building"></i>
+                        <p>
                             Unit
-                            </p>
-                        </a>
-                    </li>
+                        </p>
+                    </a>
+                </li>
+                @endif
             </ul>
         </nav>
       <!-- /.sidebar-menu -->

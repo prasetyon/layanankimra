@@ -30,6 +30,14 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/js/adminlte.js') }}"></script>
 
+<!-- fullCalendar 2.2.5 -->
+<script src="{{ asset('admin/plugins/moment/moment.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/fullcalendar/main.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/fullcalendar-daygrid/main.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/fullcalendar-timegrid/main.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/fullcalendar-interaction/main.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/fullcalendar-bootstrap/main.min.js') }}"></script>
+
 <!-- Summernote -->
 <script src="{{asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
