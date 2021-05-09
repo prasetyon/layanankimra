@@ -30,7 +30,7 @@ Route::prefix('advokasi')->group(function () {
     });
 
     Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
-        Route::view('kalenderkegiatan', 'advokasi.kalenderkegiatan')->name('kalenderkegiatan');
+        Route::get('kalenderkegiatan', ['as' => 'kalenderkegiatan', 'uses' => 'AdvokasiController@kalender']);
         Route::view('penangananperkara', 'advokasi.penangananperkara')->name('penangananperkara');
         Route::view('pendapathukum', 'advokasi.pendapathukum')->name('pendapathukum');
         Route::view('pendampingan', 'advokasi.pendampingan')->name('pendampingan');
