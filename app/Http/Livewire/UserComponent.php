@@ -20,6 +20,7 @@ class UserComponent extends Component
     public $paginatedPerPages = 10;
     public $input_id, $searchTerm, $input_kl, $input_es1, $input_es2, $input_es3, $input_es4;
     public $input_name, $input_username, $input_role, $input_fitur;
+    public $input_email, $input_nik, $input_phone, $input_address;
 
     // View
     public function render()
@@ -49,6 +50,14 @@ class UserComponent extends Component
                     ['role', 'like', '%' . $searchData . '%'],
                 ])->orWhere([
                     ['fitur', 'like', '%' . $searchData . '%'],
+                ])->orWhere([
+                    ['email', 'like', '%' . $searchData . '%'],
+                ])->orWhere([
+                    ['nik', 'like', '%' . $searchData . '%'],
+                ])->orWhere([
+                    ['phone', 'like', '%' . $searchData . '%'],
+                ])->orWhere([
+                    ['address', 'like', '%' . $searchData . '%'],
                 ]);
             })->paginate($this->paginatedPerPages),
         ]);
@@ -110,6 +119,10 @@ class UserComponent extends Component
                     'name' => $this->input_name,
                     'role' => $this->input_role,
                     'fitur' => $this->input_fitur,
+                    'email' => $this->input_email,
+                    'nik' => $this->input_nik,
+                    'address' => $this->input_address,
+                    'phone' => $this->input_phone,
                 ]);
         } else {
             User::create([
@@ -124,6 +137,10 @@ class UserComponent extends Component
                 'name' => $this->input_name,
                 'role' => $this->input_role,
                 'fitur' => $this->input_fitur,
+                'email' => $this->input_email,
+                'nik' => $this->input_nik,
+                'address' => $this->input_address,
+                'phone' => $this->input_phone,
             ]);
         }
 
@@ -161,6 +178,10 @@ class UserComponent extends Component
         $this->input_username = $data->username;
         $this->input_role = $data->role;
         $this->input_fitur = $data->fitur;
+        $this->input_email = $data->email;
+        $this->input_nik = $data->nik;
+        $this->input_address = $data->address;
+        $this->input_phone = $data->phone;
 
         // Then input fields and show data
         $this->openModal();

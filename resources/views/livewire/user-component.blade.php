@@ -16,6 +16,26 @@
                     <input type="text" wire:model="input_username" id="input_username" class="form-control @error('input_username') is-invalid @enderror">
                     @error('input_username') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
+                <div class="form-group col-sm-3 col-12">
+                    <label for="input_email">Email</label>
+                    <input type="text" wire:model="input_email" id="input_email" class="form-control @error('input_email') is-invalid @enderror">
+                    @error('input_email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+                <div class="form-group col-sm-3 col-12">
+                    <label for="input_phone">No. HP</label>
+                    <input type="text" wire:model="input_phone" id="input_phone" class="form-control @error('input_phone') is-invalid @enderror">
+                    @error('input_phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+                <div class="form-group col-sm-3 col-12">
+                    <label for="input_nik">NIK / NIP</label>
+                    <input type="text" wire:model="input_nik" id="input_nik" class="form-control @error('input_nik') is-invalid @enderror">
+                    @error('input_nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+                <div class="form-group col-sm-3 col-12">
+                    <label for="input_address">Alamat</label>
+                    <input type="text" wire:model="input_address" id="input_address" class="form-control @error('input_address') is-invalid @enderror">
+                    @error('input_address') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
 
                 <div class="form-group col-sm-3 col-12">
                     <label for="input_role">Role</label>
@@ -123,7 +143,7 @@
                 <thead class="text-center">
                     <tr>
                         <th width="5%">No</th>
-                        <th class="text-left">Name</th>
+                        <th class="text-left">Detail</th>
                         <th class="text-left">Username</th>
                         <th class="text-left">Role</th>
                         <th class="text-left">Fitur</th>
@@ -135,7 +155,12 @@
                     @forelse($lists as $list)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td class="text-left">{{ $list->name }}</td>
+                        <td class="text-left">
+                            {{ $list->name }} <br/>
+                            {{ $list->email }} <br/>
+                            {{ $list->nik }} <br/>
+                            {{ $list->phone }} <br/>
+                        </td>
                         <td class="text-left">{{ $list->username }}</td>
                         <td class="text-left">{{ $list->role }}</td>
                         <td class="text-left">{{ $list->fitur }}</td>
