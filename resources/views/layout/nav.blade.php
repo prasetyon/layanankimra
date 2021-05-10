@@ -11,6 +11,7 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
+        @livewire('notification-icon-component')
         <li class="nav-item d-none d-sm-inline-block">
             <a class="nav-link" href="{{route('logout')}}" style="margin-bottom: 0">Logout</a>
         </li>

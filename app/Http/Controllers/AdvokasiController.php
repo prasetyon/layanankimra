@@ -19,7 +19,7 @@ class AdvokasiController extends Controller
 
         foreach ($dataLitigasi as $d) {
             $dataTemp = new stdClass;
-            $dataTemp->title = 'Sidang ' . $d->nomor_st;
+            $dataTemp->title = 'Sidang ' . $d->jenisSidang->name . ' ' . $d->nomor_st;
             $dataTemp->start = $d->tanggal;
             if ($d->modul == 1) {
                 $dataTemp->backgroundColor = '#0073b7';

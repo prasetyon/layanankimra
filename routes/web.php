@@ -20,6 +20,7 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 
 Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::view('notifikasi', 'notifikasi')->name('notifikasi');
 });
 
 Route::prefix('advokasi')->group(function () {
@@ -34,6 +35,16 @@ Route::prefix('advokasi')->group(function () {
         Route::view('penangananperkara', 'advokasi.penangananperkara')->name('penangananperkara');
         Route::view('pendapathukum', 'advokasi.pendapathukum')->name('pendapathukum');
         Route::view('pendampingan', 'advokasi.pendampingan')->name('pendampingan');
+    });
+});
+
+Route::prefix('pengaduan')->group(function () {
+    Route::middleware('loggedin:admin')->group(function () {
+        Route::view('jenisaduan', 'pengaduan.jenisaduan')->name('jenisaduan');
+    });
+
+    Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
+        Route::view('pengaduan', 'pengaduan.pengaduan')->name('pengaduan');
     });
 });
 

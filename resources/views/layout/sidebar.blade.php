@@ -101,14 +101,22 @@
                 @endif
 
                 <li class="nav-header">Pengaduan</li>
-                {{-- <li class="nav-item">
+                <li class="nav-item">
+                    <a href="{{route('pengaduan')}}" class="nav-link @if($title=='Pengaduan') active @endif">
+                    <i class="nav-icon fas fa-flag"></i>
+                        <p>
+                            Pengaduan
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('jenisaduan')}}" class="nav-link @if($title=='Jenis Aduan') active @endif">
                     <i class="nav-icon fas fa-database"></i>
                         <p>
                             Jenis Aduan
                         </p>
                     </a>
-                </li> --}}
+                </li>
 
                 <li class="nav-header">Aparat Pemeriksa</li>
                 @if(in_array(Auth::user()->role, ['admin', 'superuser']))
@@ -171,8 +179,8 @@
                     </li>
                 @endif --}}
 
-                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-header">Referensi</li>
+                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-item">
                     <a href="{{route('user')}}" class="nav-link @if($title=='User') active @endif">
                     <i class="nav-icon fas fa-users"></i>
@@ -190,6 +198,14 @@
                     </a>
                 </li>
                 @endif
+                <li class="nav-item">
+                    <a href="{{route('notifikasi')}}" class="nav-link @if($title=='Notifikasi') active @endif">
+                    <i class="nav-icon fas fa-bell"></i>
+                        <p>
+                            Notifikasi
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
       <!-- /.sidebar-menu -->
