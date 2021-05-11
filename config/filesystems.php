@@ -69,7 +69,7 @@ return [
         // public_path('storage') => storage_path('app/public'),
         public_path('file/referensi') => storage_path('app/referensi'),
         public_path('file/advokasi') => storage_path('app/advokasi'),
-        public_path('file/pengaduan') => storage_path('app/pengaduan'),
+        public_path('file/pengaduan') => storage_path('app/aduan'),
         public_path('file/pengendalianintern') => storage_path('app/pengendalianintern'),
         public_path('file/pengelolaanrisiko') => storage_path('app/pengelolaanrisiko'),
         public_path('file/aparatpemeriksa') => storage_path('app/aparatpemeriksa'),

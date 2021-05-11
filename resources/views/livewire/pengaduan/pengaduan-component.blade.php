@@ -92,7 +92,7 @@
         </div>
     </div>
     @elseif($isTimeline)
-    <div class="col-xl-12 col-12">
+    <div wire:poll class="col-xl-12 col-12">
         <div class="card">
             <div class="card-header">
                 <button wire:click="closeModal()" class="btn btn-secondary"><i class="fas fa-angle-left pr-1"></i> Back</button>

@@ -35,12 +35,18 @@ class PengaduanComponent extends Component
     public function render()
     {
         $searchData = $this->searchTerm;
+        $user = Auth::user();
+        $userid = $user->id;
         return view('livewire.pengaduan.pengaduan-component', [
-            'loggedUser' => Auth::user(),
+            'loggedUser' => $user,
             'selectedAduan' => Pengaduan::where('id', $this->aduan_id)->first(),
             'listTypes' => JenisAduan::orderBy('name')->get(),
             'listFiles' => FilePengaduan::where('aduan', $this->input_id)->orderBy('name')->get(),
-            'lists' => Pengaduan::when($searchData, function ($searchQuery) use ($searchData) {
+            'lists' => Pengaduan::when($user->role == 'user', function ($searchById) use ($userid) {
+                $searchById->where([
+                    ['created_by', $userid]
+                ]);
+            })->when($searchData, function ($searchQuery) use ($searchData) {
                 $searchQuery->where([
                     ['perihal', 'like', '%' . $searchData . '%']
                 ])->orWhere([
@@ -150,14 +156,10 @@ class PengaduanComponent extends Component
             ]);
         }
 
+        $this->reset(['tanggapan']);
+
         // Show an alert
         $this->alert('success', $this->input_id ? 'Data berhasil diperbarui' : 'Data berhasil disimpan');
-
-        // Close input form, we're going back to the list
-        $this->closeModal();
-
-        // Reset input fields for next input
-        $this->resetInputFields();
     }
 
     // Save data

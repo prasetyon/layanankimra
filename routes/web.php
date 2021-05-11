@@ -17,6 +17,8 @@ Route::get('/', ['as' => '/', 'uses' => 'AuthController@index']);
 Route::get('login', ['as' => 'login', 'uses' => 'AuthController@index']);
 Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
+Route::get('aduan', ['as' => 'aduan', 'uses' => 'PengaduanController@index']);
+Route::post('aduan', ['as' => 'aduan', 'uses' => 'PengaduanController@store']);
 
 Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
