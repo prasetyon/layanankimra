@@ -50,6 +50,18 @@ Route::prefix('pengaduan')->group(function () {
     });
 });
 
+Route::prefix('manajemenrisiko')->group(function () {
+    Route::middleware('loggedin:admin')->group(function () {
+        Route::view('sasaranorganisasi', 'manajemenrisiko.sasaranorganisasi')->name('sasaranorganisasi');
+    });
+
+    Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
+        Route::view('piagamrisiko', 'manajemenrisiko.piagamrisiko')->name('piagamrisiko');
+        Route::view('profilrisiko', 'manajemenrisiko.profilrisiko')->name('profilrisiko');
+        Route::view('mitigasirisiko', 'manajemenrisiko.mitigasirisiko')->name('mitigasirisiko');
+    });
+});
+
 Route::prefix('aparatpemeriksa')->group(function () {
     Route::middleware('loggedin:admin')->group(function () {
         Route::view('statustinjut', 'aparatpemeriksa.statustinjut')->name('statustinjut');

@@ -158,7 +158,38 @@
 
 
                 <li class="nav-header">Manajemen Risiko</li>
-
+                <li class="nav-item">
+                    <a href="{{route('piagamrisiko')}}" class="nav-link @if($title=='Piagam Risiko') active @endif">
+                    <i class="nav-icon fas fa-building"></i>
+                        <p>
+                            Piagam Risiko
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('profilrisiko')}}" class="nav-link @if($title=='Profil Risiko') active @endif">
+                    <i class="nav-icon fas fa-building"></i>
+                        <p>
+                            Profil Risiko
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('mitigasirisiko')}}" class="nav-link @if($title=='Mitigasi Risiko') active @endif">
+                    <i class="nav-icon fas fa-building"></i>
+                        <p>
+                            Mitigasi Risiko
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('sasaranorganisasi')}}" class="nav-link @if($title=='Sasaran Organisasi') active @endif">
+                    <i class="nav-icon fas fa-database"></i>
+                        <p>
+                            Sasaran Organisasi
+                        </p>
+                    </a>
+                </li>
                 {{-- @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                     <li class="nav-header">File Referensi</li>
                     <li class="nav-item">
