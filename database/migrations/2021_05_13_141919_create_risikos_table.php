@@ -18,11 +18,12 @@ class CreateRisikosTable extends Migration
             $table->foreignId('piagam')->constraint('piagam_risikos');
             $table->foreignId('so')->constraint('sasaran_organisasis');
             $table->string('nama');
-            $table->string('deskripsi');
-            $table->string('formula');
-            $table->float('batas_aman');
-            $table->float('batas_atas');
-            $table->float('batas_bawah');
+            $table->string('iru');
+            $table->longText('deskripsi');
+            $table->longText('formula');
+            $table->float('batas_aman')->nullable();
+            $table->float('batas_atas')->nullable();
+            $table->float('batas_bawah')->nullable();
             $table->string('satuan');
             $table->string('jenis_periode');
             $table->string('jenis_lokasi');

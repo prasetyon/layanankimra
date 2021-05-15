@@ -17,6 +17,6 @@ class PiagamRisiko extends Model
 
     public function data()
     {
-        return $this->hasMany(Risiko::class, 'piagam');
+        return $this->hasMany(Risiko::class, 'piagam')->orderBy('so', 'asc');
     }
 }
