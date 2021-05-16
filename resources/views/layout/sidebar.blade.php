@@ -109,6 +109,7 @@
                         </p>
                     </a>
                 </li>
+                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-item">
                     <a href="{{route('jenisaduan')}}" class="nav-link @if($title=='Jenis Aduan') active @endif">
                     <i class="nav-icon fas fa-database"></i>
@@ -117,6 +118,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
 
                 <li class="nav-header">Aparat Pemeriksa</li>
                 @if(in_array(Auth::user()->role, ['admin', 'superuser']))
@@ -182,6 +184,7 @@
                         </p>
                     </a>
                 </li>
+                @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-item">
                     <a href="{{route('sasaranorganisasi')}}" class="nav-link @if($title=='Sasaran Organisasi') active @endif">
                     <i class="nav-icon fas fa-database"></i>
@@ -190,6 +193,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
                 {{-- @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                     <li class="nav-header">File Referensi</li>
                     <li class="nav-item">
