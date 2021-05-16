@@ -1,6 +1,6 @@
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4 text-sm">
     <!-- Brand Logo -->
     <a href="{{url("/")}}" class="brand-link">
         <img src="{{asset('admin/img/logoAAI-crop.png')}}" alt="App Logo" class="brand-image img-circle elevation-3"
@@ -162,7 +162,7 @@
                 <li class="nav-header">Manajemen Risiko</li>
                 <li class="nav-item">
                     <a href="{{route('piagamrisiko')}}" class="nav-link @if($title=='Piagam Risiko') active @endif">
-                    <i class="nav-icon fas fa-building"></i>
+                    <i class="nav-icon fas fa-book"></i>
                         <p>
                             Piagam Risiko
                         </p>
@@ -170,7 +170,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('profilrisiko')}}" class="nav-link @if($title=='Profil Risiko') active @endif">
-                    <i class="nav-icon fas fa-building"></i>
+                    <i class="nav-icon fas fa-address-card"></i>
                         <p>
                             Profil Risiko
                         </p>
@@ -178,7 +178,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('mitigasirisiko')}}" class="nav-link @if($title=='Mitigasi Risiko') active @endif">
-                    <i class="nav-icon fas fa-building"></i>
+                    <i class="nav-icon fas fa-power-off"></i>
                         <p>
                             Mitigasi Risiko
                         </p>

@@ -28,15 +28,23 @@ class MitigasiRisikoComponent extends Component
     public function render()
     {
         $searchData = $this->searchTerm;
+
+        $user = Auth::user();
+        $userid = $user->id;
+
         return view('livewire.manajemen-risiko.mitigasi-risiko-component', [
             // Lists
             'listUnit' => ReferensiUnit::select('es2')->distinct()->get(),
-            'lists' => MitigasiRisiko::when($searchData, function ($searchQuery) use ($searchData) {
+            'lists' => MitigasiRisiko::when($user->role == 'user', function ($searchById) use ($userid) {
+                $searchById->where([
+                    ['created_by', $userid]
+                ]);
+            })->when($searchData, function ($searchQuery) use ($searchData) {
                 $searchQuery->where([
                     ['kejadian', 'like', '%' . $searchData . '%'],
                 ])->orWhere([
                     ['penganggung_jawab', 'like', '%' . $searchData . '%'],
-                ])->where([
+                ])->orWhere([
                     ['unit', 'like', '%' . $searchData . '%'],
                 ]);
             })->paginate($this->paginatedPerPages),
