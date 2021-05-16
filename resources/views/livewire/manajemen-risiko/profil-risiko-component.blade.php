@@ -1,3 +1,4 @@
+@include('layout.function')
 @if($isOpen)
 <div class="card">
     <div class="card-header">
@@ -263,16 +264,16 @@
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->dampak }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->kategori }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->sistem }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->lk_kemungkinan }}</td>
+                        <td class="text-left">{{ $list->lk_kemungkinan }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->penjelasan_kemungkinan }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->ld_dampak }}</td>
+                        <td class="text-left">{{ $list->ld_dampak }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->penjelasan_dampak }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->besaran_risiko }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->lr }}</td>
+                        <td class="text-left" style="background-color:{{formatColorRisiko($list->besaran_risiko, true)}}">{{ $list->besaran_risiko }}</td>
+                        <td class="text-left" style="background-color:{{formatColorRisiko($list->lr, false)}}">{{ $list->lr }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->prioritas_risiko }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->lk_risiko }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->ld_risiko }}</td>
-                        <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->lr_risiko }}</td>
+                        <td class="text-left">{{ $list->lk_risiko }}</td>
+                        <td class="text-left">{{ $list->ld_risiko }}</td>
+                        <td class="text-left" style="background-color:{{formatColorRisiko($list->lr_risiko, false)}}">{{ $list->lr_risiko }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->keputusan_mitigasi }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->nama_iru }}</td>
                         <td class="text-left" style="white-space:pre-wrap; word-wrap:break-word">{{ $list->batasan_nilai }}</td>
