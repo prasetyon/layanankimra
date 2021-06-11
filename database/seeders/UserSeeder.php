@@ -51,8 +51,8 @@ class UserSeeder extends Seeder
             'role' => 'es2',
             'kl' => 'Kementerian Keuangan',
             'es1' => 'Direktorat Jenderal Anggaran',
-            'es2' => 'Sekretariat',
-            'es3' => 'KIMRA',
+            'es2' => 'Sekretariat Direktorat Jenderal Anggaran',
+            'es3' => 'Bagian Kepatuhan Internal, Manajemen Risiko, dan Advokasi',
             'password' => bcrypt('123'),
         ]);
         User::create([
@@ -61,8 +61,8 @@ class UserSeeder extends Seeder
             'role' => 'es3',
             'kl' => 'Kementerian Keuangan',
             'es1' => 'Direktorat Jenderal Anggaran',
-            'es2' => 'Sekretariat',
-            'es3' => 'KIMRA',
+            'es2' => 'Sekretariat Direktorat Jenderal Anggaran',
+            'es3' => 'Bagian Kepatuhan Internal, Manajemen Risiko, dan Advokasi',
             'password' => bcrypt('123'),
         ]);
         User::create([
@@ -71,8 +71,8 @@ class UserSeeder extends Seeder
             'role' => 'es4',
             'kl' => 'Kementerian Keuangan',
             'es1' => 'Direktorat Jenderal Anggaran',
-            'es2' => 'Sekretariat',
-            'es3' => 'KIMRA',
+            'es2' => 'Sekretariat Direktorat Jenderal Anggaran',
+            'es3' => 'Bagian Kepatuhan Internal, Manajemen Risiko, dan Advokasi',
             'es4' => 'Pemantauan Advokasi',
             'password' => bcrypt('123'),
         ]);
@@ -82,8 +82,8 @@ class UserSeeder extends Seeder
             'role' => 'es4',
             'kl' => 'Kementerian Keuangan',
             'es1' => 'Direktorat Jenderal Anggaran',
-            'es2' => 'Sekretariat',
-            'es3' => 'KIMRA',
+            'es2' => 'Sekretariat Direktorat Jenderal Anggaran',
+            'es3' => 'Bagian Kepatuhan Internal, Manajemen Risiko, dan Advokasi',
             'es4' => 'Pemantauan Pengaduan',
             'password' => bcrypt('123'),
         ]);
