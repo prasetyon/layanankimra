@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\AparatPemeriksa;
 use App\Models\JenisAduan;
 use App\Models\JenisPemeriksaan;
+use App\Models\JenisPengawasan;
 use App\Models\JenisPerkara;
 use App\Models\JenisSidang;
 use App\Models\StatusAksi;
@@ -133,6 +134,32 @@ class JenisStatusSeeder extends Seeder
         ]);
         AparatPemeriksa::insert([
             'name' => 'Aparat Pemeriksa Lainnya'
+        ]);
+
+        JenisPengawasan::truncate();
+        JenisPengawasan::insert([
+            'name' => 'BPK - Laporan Keuangan'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'BPK - Kinerja PDTT'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'Itjen - Tugas dan Fungsi'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'Itjen - Non-Tusi (Kesekretariatan)'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'Itjen - Laporan Keuangan'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'BPKP'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'KIMRA1'
+        ]);
+        JenisPengawasan::insert([
+            'name' => 'KIMRA2'
         ]);
     }
 }

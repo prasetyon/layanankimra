@@ -5,7 +5,7 @@
     <a href="{{url("/")}}" class="brand-link">
         <img src="{{asset('admin/img/logoAAI-crop.png')}}" alt="App Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">LP Kimra</span>
+        <span class="brand-text font-weight-light">SILK</span>
     </a>
 
     <!-- Sidebar -->
@@ -120,7 +120,15 @@
                 </li>
                 @endif
 
-                <li class="nav-header">Aparat Pemeriksa</li>
+                <li class="nav-header">Pengawasan</li>
+                <li class="nav-item">
+                    <a href="{{route('pengawasan')}}" class="nav-link @if($title=='Pengawasan') active @endif">
+                    <i class="nav-icon fas fa-search"></i>
+                        <p>
+                            Pengawasan
+                        </p>
+                    </a>
+                </li>
                 @if(in_array(Auth::user()->role, ['admin', 'superuser']))
                 <li class="nav-item">
                     <a href="{{route('aparatpemeriksa')}}" class="nav-link @if($title=='Aparat Pemeriksa') active @endif">
@@ -135,6 +143,14 @@
                     <i class="nav-icon fas fa-database"></i>
                         <p>
                             Status Tinjut
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('jenispengawasan')}}" class="nav-link @if($title=='Jenis Pengawasan') active @endif">
+                    <i class="nav-icon fas fa-database"></i>
+                        <p>
+                            Jenis Pengawasan
                         </p>
                     </a>
                 </li>

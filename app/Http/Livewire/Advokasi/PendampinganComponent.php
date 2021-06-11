@@ -223,7 +223,7 @@ class PendampinganComponent extends Component
             $fileName = time() . '_' . $id . '_' . strtolower(preg_replace('/\s+/', '_', $photo->getClientOriginalName()));
             $photo->storeAs('advokasi', $fileName);
 
-            FilePerkara::insert([
+            FilePerkara::create([
                 'perkara' => $id,
                 'name' => $fileName,
                 'created_by' => Auth::id(),

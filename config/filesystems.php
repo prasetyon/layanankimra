@@ -74,6 +74,7 @@ return [
         public_path('file/pengelolaanrisiko') => storage_path('app/pengelolaanrisiko'),
         public_path('file/aparatpemeriksa') => storage_path('app/aparatpemeriksa'),
         public_path('file/tinjut') => storage_path('app/tinjut'),
+        public_path('file/pengawasan') => storage_path('app/pengawasan'),
     ],
 
 ];

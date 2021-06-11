@@ -406,7 +406,7 @@
 
                                     <button wire:click="openTimeline({{ $list->id }})" title="Lihat Timeline" class="btn btn-sm btn-primary" style="width:auto; margin: 2px"><i class="fas fa-calendar"></i></button>
 
-                                    @if($loggedUser->role == 'admin' || $loggedUser->role == 'superuser')
+                                    @if(in_array($loggedUser->role, ['admin', 'superuser']))
                                         <button wire:click="edit({{ $list->id }})" title="Ubah Data" class="btn btn-sm btn-warning" style="width:auto; margin: 2px"><i class="fas fa-edit"></i></button>
                                         @if($list->approved_es3)
                                             <button wire:click="openSidang({{ $list->id }})" title="Buat Sidang Baru" class="btn btn-sm btn-secondary" style="width:auto; margin: 2px"><i class="fas fa-gavel"></i></button>

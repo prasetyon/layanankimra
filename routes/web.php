@@ -62,8 +62,13 @@ Route::prefix('manajemenrisiko')->group(function () {
     });
 });
 
-Route::prefix('aparatpemeriksa')->group(function () {
+Route::prefix('pengawasan')->group(function () {
+    Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
+        Route::view('pengawasan', 'aparatpemeriksa.pengawasan')->name('pengawasan');
+    });
+
     Route::middleware('loggedin:admin')->group(function () {
+        Route::view('jenispengawasan', 'aparatpemeriksa.jenispengawasan')->name('jenispengawasan');
         Route::view('statustinjut', 'aparatpemeriksa.statustinjut')->name('statustinjut');
         Route::view('aparatpemeriksa', 'aparatpemeriksa.aparatpemeriksa')->name('aparatpemeriksa');
     });
