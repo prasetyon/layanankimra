@@ -120,12 +120,20 @@
                 </li>
                 @endif
 
-                <li class="nav-header">Pengawasan</li>
+                <li class="nav-header">Pemeriksaan</li>
                 <li class="nav-item">
-                    <a href="{{route('pengawasan')}}" class="nav-link @if($title=='Pengawasan') active @endif">
+                    <a href="{{route('tinjut')}}" class="nav-link @if($title=='Monitoring Tinjut') active @endif">
+                    <i class="nav-icon fas fa-desktop"></i>
+                        <p>
+                            Monitoring Tinjut
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('pengawasan')}}" class="nav-link @if($title=='Pemeriksaan') active @endif">
                     <i class="nav-icon fas fa-search"></i>
                         <p>
-                            Pengawasan
+                            Pemeriksaan
                         </p>
                     </a>
                 </li>

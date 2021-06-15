@@ -76,6 +76,7 @@ Route::prefix('manajemenrisiko')->group(function () {
 
 Route::prefix('pemeriksaan')->group(function () {
     Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
+        Route::view('tinjut', 'aparatpemeriksa.tinjut')->name('tinjut');
         Route::view('pemeriksaan', 'aparatpemeriksa.pengawasan')->name('pengawasan');
     });
 
