@@ -336,7 +336,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="card bg-purple">
+        <div class="card card-outline card-purple">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-2">
@@ -374,7 +374,7 @@
         </div>
 
         <div class="card-group" style="margin-top: 5px">
-            <div class="card bg-purple">
+            <div class="card card-outline card-purple">
                 <div class="card-body">
                     <h5 class="card-title"><b>Surat Tugas</b></h5>
                     <p class="card-text">
@@ -384,7 +384,7 @@
                     <p class="card-text">
                         File Pendukung : <br/>
                         @foreach($selectedData->file as $f)
-                        <a href="{{$f->file}}" target="_blank" style="color: yellow">{{$f->name}}</a>
+                        <a href="{{$f->file}}" target="_blank" style="color: blue">{{$f->name}}</a>
                         @if(in_array($loggedUser->role, ['admin', 'superuser']))
                             <a wire:click="deleteFile({{$f->id}})" style="color: red"
                                 wire:onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()"> [delete]</a>
@@ -394,7 +394,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card bg-success" style="margin-left: 5px; margin-right: 5px">
+            <div class="card card-outline card-success" style="margin-left: 5px; margin-right: 5px">
                 <div class="card-body">
                     <h5 class="card-title"><b>Entry Meeting</b></h5>
                     <p class="card-text">
@@ -404,7 +404,7 @@
                     <p class="card-text" style="white-space:pre-wrap; word-wrap:break-word">Peserta :<br/>{{ $selectedData->peserta_entry }}</p>
                 </div>
             </div>
-            <div class="card bg-danger">
+            <div class="card card-outline card-danger">
                 <div class="card-body">
                     <h5 class="card-title"><b>Exit Meeting</b></h5>
                     <p class="card-text">
@@ -416,7 +416,7 @@
             </div>
         </div>
 
-        <div class="card bg-info" style="margin-top: 20px">
+        <div class="card card-outline card-info" style="margin-top: 20px">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -428,7 +428,7 @@
         </div>
 
         @if($showPermindok)
-        <div class="card" style="margin-top: 5px">
+        <div class="card card-outline card-info" style="margin-top: 5px">
             @foreach ($selectedData->permindok as $permindok)
             <div class="card-body">
                 <h5 class="card-title">Permindok
@@ -475,7 +475,7 @@
         </div>
         @endif
 
-        <div class="card bg-warning" style="margin-top: 20px">
+        <div class="card card-outline card-warning" style="margin-top: 20px">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -487,7 +487,7 @@
         </div>
 
         @if($showEkspose)
-        <div class="card" style="margin-top: 5px">
+        <div class="card card-outline card-warning" style="margin-top: 5px">
             @foreach ($selectedData->ekspose as $ekspose)
             <div class="card-body">
                 <h5 class="card-title">Ekspose
@@ -534,7 +534,7 @@
         </div>
         @endif
 
-        <div class="card bg-secondary" style="margin-top: 20px">
+        <div class="card card-outline card-secondary" style="margin-top: 20px">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -546,7 +546,7 @@
         </div>
 
         @if($showKriteria)
-        <div class="card" style="margin-top: 5px">
+        <div class="card card-outline card-secondary" style="margin-top: 5px">
             @foreach ($selectedData->kriteria as $kriteria)
             <div class="card-body">
                 <h5 class="card-title">Kriteria
@@ -623,7 +623,7 @@
         </div>
         @endif
 
-        <div class="card bg-primary" style="margin-top: 20px">
+        <div class="card card-outline card-primary" style="margin-top: 20px">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -635,7 +635,7 @@
         </div>
 
         @if($showHasil)
-        <div class="card" style="margin-top: 5px">
+        <div class="card card-outline card-primary" style="margin-top: 5px">
             @foreach ($selectedData->hasil as $hasil)
             <div class="card-body">
                 <h5 class="card-title">Penyampaian Hasil Pemeriksaan

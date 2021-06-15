@@ -50,6 +50,18 @@ Route::prefix('pengaduan')->group(function () {
     });
 });
 
+Route::prefix('pengendalianinternal')->group(function () {
+    // Route::middleware('loggedin:admin')->group(function () {
+    //     Route::view('jenisaduan', 'pengaduan.jenisaduan')->name('jenisaduan');
+    // });
+
+    Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
+        Route::view('epite', 'pengendalianintern.epite')->name('epite');
+        Route::view('ppita', 'pengendalianintern.ppita')->name('ppita');
+        Route::view('pipk', 'pengendalianintern.pipk')->name('pipk');
+    });
+});
+
 Route::prefix('manajemenrisiko')->group(function () {
     Route::middleware('loggedin:admin')->group(function () {
         Route::view('sasaranorganisasi', 'manajemenrisiko.sasaranorganisasi')->name('sasaranorganisasi');
@@ -62,9 +74,9 @@ Route::prefix('manajemenrisiko')->group(function () {
     });
 });
 
-Route::prefix('pengawasan')->group(function () {
+Route::prefix('pemeriksaan')->group(function () {
     Route::middleware('loggedin:admin,es4,es3,es2,user')->group(function () {
-        Route::view('pengawasan', 'aparatpemeriksa.pengawasan')->name('pengawasan');
+        Route::view('pemeriksaan', 'aparatpemeriksa.pengawasan')->name('pengawasan');
     });
 
     Route::middleware('loggedin:admin')->group(function () {

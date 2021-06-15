@@ -172,7 +172,31 @@
                     </a>
                 </li> --}}
 
-                <li class="nav-header">Pengendalian Intern</li>
+                <li class="nav-header">Pengendalian Internal</li>
+                <li class="nav-item">
+                    <a href="{{route('epite')}}" class="nav-link @if($title=='EPITE') active @endif">
+                    <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            EPITE
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('pipk')}}" class="nav-link @if($title=='PIPK') active @endif">
+                    <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            PIPK
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('ppita')}}" class="nav-link @if($title=='PPITA') active @endif">
+                    <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            PPITA
+                        </p>
+                    </a>
+                </li>
 
 
                 <li class="nav-header">Manajemen Risiko</li>
