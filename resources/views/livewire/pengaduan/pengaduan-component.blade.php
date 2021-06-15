@@ -91,6 +91,34 @@
             </form>
         </div>
     </div>
+    @elseif($isOpenReject)
+    <div class="col-xl-12 col-12">
+        <div class="card">
+            <div class="card-header">
+                <button wire:click="closeModal()" class="btn btn-secondary"><i class="fas fa-angle-left pr-1"></i> Back</button>
+            </div>
+            <form wire:submit.prevent="storeReject()">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-lg-12 col-sm-12">
+                            <label class="font-weight-bold">Pesan Penolakan</label>
+                            <input type="text" wire:model="input_perihal"
+                                class="form-control @error('input_perihal') is-invalid @enderror">
+                            @error('input_perihal')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                    <button type="button" wire:click.prevent="storeReject()" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
     @elseif($isTimeline)
     <div wire:poll class="col-xl-12 col-12">
         <div class="card">
@@ -220,9 +248,16 @@
                                     @endif
 
                                     @if(($loggedUser->role == 'admin' || $loggedUser->role == 'superuser') && stripos($list->status, 'selesai') === false)
+                                        @if(stripos($list->status, 'diterima')!==false || stripos($list->status, 'on progress')!==false)
                                         <button wire:click="approve({{ $list->id }}, '{{ $list->status }}')" title="Approve" class="btn btn-sm btn-success" style="width:auto; margin: 2px" onclick="confirm('Are you sure to update status?') || event.stopImmediatePropagation()"><i class="fas fa-check"></i></button>
+                                        @endif
+                                        @if(stripos($list->status, 'diterima')!==false)
+                                        <button wire:click="reject({{ $list->id }})" title="Tolak" class="btn btn-sm btn-danger" style="width:auto; margin: 2px"><i class="fas fa-ban"></i></button>
+                                        @endif
+                                        @if(stripos($list->status, 'diterima')!==false || stripos($list->status, 'on progress')!==false)
                                         <button wire:click="edit({{ $list->id }})" title="Ubah Data" class="btn btn-sm btn-warning" style="width:auto; margin: 2px"><i class="fas fa-edit"></i></button>
                                         <button wire:click="delete({{ $list->id }})" title="Hapus Data" class="btn btn-sm btn-danger" style="width:auto; margin: 2px" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
+                                        @endif
                                     @endif
                                 </td>
                             </tr>

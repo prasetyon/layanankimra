@@ -21,6 +21,7 @@ class PengaduanComponent extends Component
 
     // Public variable
     public $isOpen = 0;
+    public $isOpenReject = 0;
     public $isKajianHukum = 0;
     public $isSidang = 0;
     public $isTimeline = 0;
@@ -71,6 +72,7 @@ class PengaduanComponent extends Component
     public function openModal()
     {
         $this->isOpen = true;
+        $this->isOpenReject = false;
         $this->isSidang = false;
         $this->isTimeline = false;
     }
@@ -79,6 +81,7 @@ class PengaduanComponent extends Component
     {
         $this->aduan_id = $id;
         $this->isSidang = true;
+        $this->isOpenReject = false;
         $this->isOpen = false;
         $this->isTimeline = false;
     }
@@ -87,6 +90,7 @@ class PengaduanComponent extends Component
     {
         $this->aduan_id = $id;
         $this->isTimeline = true;
+        $this->isOpenReject = false;
         $this->isSidang = false;
         $this->isOpen = false;
     }
@@ -95,6 +99,7 @@ class PengaduanComponent extends Component
     public function closeModal()
     {
         $this->isOpen = false;
+        $this->isOpenReject = false;
         $this->isSidang = false;
         $this->isTimeline = false;
 
@@ -109,6 +114,16 @@ class PengaduanComponent extends Component
     }
 
     // Approve data
+    public function reject($id)
+    {
+        $this->aduan_id = $id;
+        $this->isTimeline = false;
+        $this->isOpenReject = true;
+        $this->isSidang = false;
+        $this->isOpen = false;
+    }
+
+    // Approve data
     public function approve($id, $status)
     {
         if (stripos($status, 'Diterima') !== false)
@@ -118,6 +133,18 @@ class PengaduanComponent extends Component
 
         // Show an alert
         $this->alert('success', 'Data berhasil diapprove');
+    }
+
+    // Approve data
+    public function storeReject()
+    {
+        Pengaduan::where('id', $this->aduan_id)->update(['status' => 'Ditolak dengan keterangan "' . $this->input_perihal . '"']);
+
+        // Show an alert
+        $this->alert('success', 'Data berhasil ditolak');
+
+        // Close input form, we're going back to the list
+        $this->closeModal();
     }
 
     // Save data
