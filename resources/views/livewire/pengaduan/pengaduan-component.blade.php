@@ -243,7 +243,7 @@
                                 <td class="text-left">{{ $list->jenisAduan->name }}</td>
                                 <td class="text-left">{{ $list->status }}</td>
                                 <td style="text-align: center; width:10%;">
-                                    @if(stripos($list->status, 'on progress')!==false)
+                                    @if(stripos($list->status, 'on progress')!==false || stripos($list->status, 'selesai')!==false)
                                     <button wire:click="openTimeline({{ $list->id }})" title="Lihat Timeline" class="btn btn-sm btn-primary" style="width:auto; margin: 2px"><i class="fas fa-comments"></i></button>
                                     @endif
 
