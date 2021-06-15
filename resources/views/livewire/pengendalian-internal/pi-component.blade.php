@@ -295,10 +295,12 @@
                         <td class="text-left">{{ $list->status }}</td>
                         @if(in_array($loggedUser->role, ['admin', 'superuser']))
                         <td style="text-align: center;">
+                            @if($list->status != 'selesai')
                                 <button wire:click="openProses({{ $list->id }}, 'perencanaan')" class="btn btn-sm btn-secondary" style="width:auto; margin: 2px"><i class="fas fa-bullseye"></i></button>
                                 <button wire:click="approve({{ $list->id }}, '{{ $list->status }}')" title="Approve" class="btn btn-sm btn-success" style="width:auto; margin: 2px" onclick="confirm('Are you sure to update status?') || event.stopImmediatePropagation()"><i class="fas fa-check"></i></button>
                                 <button wire:click="edit({{ $list->id }})" class="btn btn-sm btn-warning" style="width:auto; margin: 2px"><i class="fas fa-edit"></i></button>
                                 <button wire:click="delete({{ $list->id }})" class="btn btn-sm btn-danger" style="width:auto; margin: 2px" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
+                            @endif
                         </td>
                         @endif
                     </tr>
